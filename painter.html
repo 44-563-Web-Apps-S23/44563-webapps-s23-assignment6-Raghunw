@@ -3,43 +3,41 @@
 
 <head>
     <title>
-           Painter info
+        Painter info
     </title>
 </head>
- 
+
 <body>
 
-<h2>Painter entry Raghupathi Reddy Rupanagudi </h2>
+    <h2>Painter entry Raghupathi Reddy Rupanagudi </h2>
 
-<form>
-    <label for="Paintername">The hidden painter name</label>
-    <input type ="password" id="Painter" name="Paintername" value="Monet"> <br>
+    <form>
+        <label for="Paintername">The hidden painter name</label>
+        <input type="password" id="Painter" name="Paintername" value="Monet"> <br>
 
-    <label for="Guess">Guess the painter</label>
-    <input type ="text" id="Guess" name="Guess" autofocus> <br>
+        <label for="Guess">Guess the painter</label>
+        <input type="text" id="Guess" name="Guess" autofocus> <br>
 
-    <input type="button" onclick="checkPainter()" value="Check the guess">
-</form>
+        <input type="button" onclick="checkPainter()" value="Check the guess">
+    </form>
+    <p id="result"> Good count :0;<br>Oops count : 0;</p>
 
+    <script>
+        var good = 0; oops = 0;
+        function checkPainter() {
 
-<p id="result"> Good count :0;<br>Oops count : 0;</p>
+            if (document.getElementById("Painter").value == document.getElementById("Guess").value) {
+                alert("You got it right");
+                good = good + 1;
+            } else {
+                alert("Sorry");
+                oops = oops + 1;
+            }
+            document.getElementById("result").innerHTML = 'Good Count : ' + good + ';<br>Oops Count : ' + oops;
+        }
 
-<script> 
-
-var good = 0;oops = 0;
-function checkPainter(){
-
-    if(document.getElementById("Painter").value==document.getElementById("Guess").value){
-        alert ("You got it right");
-        good=good+1;
-    }else{
-        alert("Sorry");
-        oops = oops+1;
-    }
-    document.getElementById("result").innerHTML = 'Good Count : '+good+';<br>Oops Count : '+oops;
-}
-   
-</script>
+    </script>
 
 </body>
-</html> 
+
+</html>
