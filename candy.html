@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Using checkboxes
+    </title>
+ 
+<body>
+
+<h2>Raghupathi Reddy Rupanagudi chooses candy</h2>
+
+<form>
+    <input type="checkbox" id="chocolate" name="topping1"  value="True" checked>
+    <label for="cb1_cheese">Dark Chocolate</label></br>
+      
+    <input type="checkbox" id="nuts" name="topping2" value="True">
+    <label for="cb1_olive">Nuts</label></br>
+
+    <input type="checkbox" id="Chewy" name="topping3" value="False">
+    <label for="Chewy">Chewy</label></br>
+
+    <input type="button" onclick="selectBox()" value="Select a box">
+</form>
+
+
+<p id="result2">This text will be replaced </p>
+
+<script> 
+
+my_candy_box = {}
+        function selectBox() {
+            my_candy_box = {}
+            my_candy_box.dark = document.getElementById("chocolate").checked;
+            my_candy_box.nuts = document.getElementById("nuts").checked;
+            my_candy_box.chewy = document.getElementById("Chewy").checked;
+            document.getElementById("result2").innerHTML = JSON.stringify(my_candy_box);
+
+        }
+
+        // const myCandyBox = {};
+
+        // document.getElementById("update-box-btn").addEventListener("click", updateBox);
+
+        // function updateBox() {
+        //     const size = document.getElementById("size").value;
+        //     const price = document.getElementById("price").value;
+
+        //     myCandyBox.size = size;
+        //     myCandyBox.price = price;
+
+        //     document.getElementById("result1").innerHTML = JSON.stringify(myCandyBox);
+        // }
+</script>
+
+</body>
+</html> 
