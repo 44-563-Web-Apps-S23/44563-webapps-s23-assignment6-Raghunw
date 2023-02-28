@@ -9,46 +9,51 @@
 <h2>Raghupathi Reddy Rupanagudi chooses candy</h2>
 
 <form>
-    <input type="checkbox" id="chocolate" name="topping1"  value="True" checked>
+    <input type="checkbox" id="darkchoc" name="topping1"  value="True">
     <label for="cb1_cheese">Dark Chocolate</label></br>
       
-    <input type="checkbox" id="nuts" name="topping2" value="True">
+    <input type="checkbox" id="nutschoc" name="topping2" value="True">
     <label for="cb1_olive">Nuts</label></br>
 
-    <input type="checkbox" id="Chewy" name="topping3" value="False">
+    <input type="checkbox" id="chewychoc" name="topping3" value="False">
     <label for="Chewy">Chewy</label></br>
 
     <input type="button" onclick="selectBox()" value="Select a box">
 </form>
-
-
 <p id="result2">This text will be replaced </p>
+
+<div class="form-group">
+    <form>
+      <label for="form1_size">Enter the size </label>
+      <input type ="text" id="size" value="size" name="form1_size" autofocus> <br>
+  
+      <label for="form1_price">Enter price </label>
+      <input type ="text" id="price" name="form2" autofocus> <br>
+  
+      <input type="button" class="btn btn-primary" onclick="updateBox()" value="Update the box">
+  </form>
+  </div>
+  <p id="result3">This text will be replaced </p>
+</div>
 
 <script> 
 
 my_candy_box = {}
         function selectBox() {
             my_candy_box = {}
-            my_candy_box.dark = document.getElementById("chocolate").checked;
-            my_candy_box.nuts = document.getElementById("nuts").checked;
-            my_candy_box.chewy = document.getElementById("Chewy").checked;
+            my_candy_box.dark = document.getElementById("darkchoc").checked;
+            my_candy_box.nuts = document.getElementById("nutschoc").checked;
+            my_candy_box.chewy = document.getElementById("chewychoc").checked;
             document.getElementById("result2").innerHTML = JSON.stringify(my_candy_box);
 
         }
+        function updateBox(){
 
-        // const myCandyBox = {};
-
-        // document.getElementById("update-box-btn").addEventListener("click", updateBox);
-
-        // function updateBox() {
-        //     const size = document.getElementById("size").value;
-        //     const price = document.getElementById("price").value;
-
-        //     myCandyBox.size = size;
-        //     myCandyBox.price = price;
-
-        //     document.getElementById("result1").innerHTML = JSON.stringify(myCandyBox);
-        // }
+        my_candy_box.size=document.getElementById("size").value;
+        my_candy_box.price=document.getElementById("price").value;
+        
+        document.getElementById("result3").innerHTML=JSON.stringify(my_candy_box);
+        }
 </script>
 
 </body>
