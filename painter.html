@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 
 <head>
     <title>
@@ -23,7 +24,7 @@
     <p id="result"> Good count :0;<br>Oops count : 0;</p>
 
     <script>
-        var good = 0; oops = 0;
+        var good = 0; oops = 0; var count = 0;
         function checkPainter() {
 
             if (document.getElementById("Painter").value == document.getElementById("Guess").value) {
@@ -31,9 +32,14 @@
                 good = good + 1;
             } else {
                 alert("Sorry");
+                count = count + 1;
                 oops = oops + 1;
             }
             document.getElementById("result").innerHTML = 'Good Count : ' + good + ';<br>Oops Count : ' + oops;
+            if (count > 10) {
+                document.getElementById("result").innerHTML = 'Sorry, ran out of guesses.';
+                document.getElementById('togglee').style.visibility = 'hidden';
+            }
         }
     </script>
 
